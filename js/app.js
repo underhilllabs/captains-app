@@ -9,5 +9,9 @@ this.CaptainCtrl = function ($scope) {
     , {"name": "Benjamin Sisko","image": "img/sisko.jpg", "source": "Star Trek: DSN", "votes": 0}
     , {"name": "Han Solo","image": "img/solo.jpg", "source": "Star Wars", "votes": 0}
   ];
+
+  $scope.inc = function(idx) {
+    $scope.captains[idx].votes += 1;
+  }
 };
 
