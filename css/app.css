@@ -3,6 +3,17 @@
   width: 4em;
   font-size: 200%;
 }
+div#captains-list {
+  margin-left: 2em;
+}
+
+ul#captains-list {
+  padding-top: 1em;
+}
+ul#captains-list li {
+  list-style-type: none;
+  text-align: left;
+}
 
 ul#menu li {
   list-style-type: none;

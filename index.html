@@ -8,10 +8,11 @@
 
   </head>
 <body>
-<div ng-controller="CaptainCtrl">
+<div id="captains-list" ng-controller="CaptainCtrl">
 <h1>Vote for your favorite Sci-Fi Captain</h1>
+  Search <input type=text ng-model="query">
   <ul id="captains-list">
-    <li ng-repeat="captain in captains">
+    <li ng-repeat="captain in captains| filter:query">
       <h3>{{captain.name}}</h3>
       <img src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
