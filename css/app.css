@@ -1,0 +1,26 @@
+.voteButton {
+  height: 2em;
+  width: 4em;
+  font-size: 200%;
+}
+
+ul#menu li {
+  list-style-type: none;
+  text-align: left;
+  padding-bottom: 1em;
+}
+ul#menu li a {
+  padding: .6em;
+}
+ul#menu li div {
+  font-size: 64px;
+  line-height: 64px;
+}
+ul#menu li p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 span {
+  padding: 0.5em 1em;
+}
