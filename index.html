@@ -3,6 +3,9 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+
   </head>
 <body>
 <div ng-controller="CaptainCtrl">
@@ -12,6 +15,7 @@
       <h3>{{captain.name}}</h3>
       <img src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
+      <button >{{captain.votes}}</button>
     </li>
   </ul>
 </div>
