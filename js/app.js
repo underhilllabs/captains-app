@@ -7,7 +7,7 @@ this.CaptainCtrl = function ($scope) {
     , {"name": "Mal Reynolds","image": "img/mal.jpg", "source": "Firefly", "votes": 0}
     , {"name": "Worf Son of Mogh","image": "img/worf.jpg", "source": "Star Trek: DSN", "votes": 0}
     , {"name": "Benjamin Sisko","image": "img/sisko.jpg", "source": "Star Trek: DSN", "votes": 0}
-    , {"name": "Mal Reynolds","image": "img/mal.jpg", "source": "Firefly", "votes": 0}
+    , {"name": "Han Solo","image": "img/solo.jpg", "source": "Star Wars", "votes": 0}
   ];
 };
 
