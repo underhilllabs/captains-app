@@ -1,4 +1,4 @@
-CaptainCtlr = function ($scope) {
+this.CaptainCtrl = function ($scope) {
   $scope.captains = [
     {"name": "Jean-Luc Picard", "image": "img/picard.jpg", "source": "Star Trek: TNG", "votes": 0}
     , {"name": "James Tiberius Kirk","image": "img/kirk.jpg", "source": "Star Trek: TOS", "votes": 0}

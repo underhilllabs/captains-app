@@ -4,15 +4,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="js/app.js"></script>
   </head>
-<body ng-controller="CaptainCtrl">
+<body>
+<div ng-controller="CaptainCtrl">
 <h1>Vote for your favorite Sci-Fi Captain</h1>
   <ul id="captains-list">
     <li ng-repeat="captain in captains">
       <h3>{{captain.name}}</h3>
-      {{captain.image}}
+      <img src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
     </li>
   </ul>
+</div>
 </body>
 </html>
 
