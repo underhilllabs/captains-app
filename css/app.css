@@ -4,6 +4,8 @@
   font-size: 200%;
 }
 div#newCaptainForm {
+  border: 1px gray dashed;
+  padding: 1em;
   margin-top: 2em;
 }
 div#captains {
