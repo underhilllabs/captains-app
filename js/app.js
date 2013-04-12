@@ -14,5 +14,11 @@ this.CaptainCtrl = function ($scope) {
     console.log("index is " + idx + " int is " + parseInt(idx));
     $scope.captains[parseInt(idx)].votes += 1;
   }
+  $scope.addCaptain = function() {
+    $scope.captains.push({"name": $scope.cptName,"image": $scope.cptUrl, "source": $scope.cptSource, "votes": 1, index: $scope.captains.length});
+    $scope.cptName = "";
+    $scope.cptUrl = "";
+    $scope.cptSource = "";
+  }
 };
 
