@@ -14,19 +14,22 @@
   Search <input type=text ng-model="query">
   <ul id="captains-list">
     <li ng-repeat="captain in captains | filter:query | orderBy:'-votes'">
-		<h3>{{captain.name}} number: {{captain.index}}</h3>
+		<h3>{{captain.name}}</h3>
       <img ng-src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
 			<button ng-click="inc(captain.index)" class="voteButton">{{captain.votes}}</button>
     </li>
   </ul>
 
+<div id="newCaptainForm">
+	<h3 id="form-header">Add A New Contendeh!</h3>
 	<form ng-submit="addCaptain()">
-		Name: <input type=text ng-model="cptName"><br>
-		Image URL: <input type=text ng-model="cptUrl"><br>
-		book/movie source: <input type=text ng-model="cptSource"><br>
-    <input type=submit value="add Captain!">
-  </form>
+		Name:<br> <input type=text ng-model="cptName"><br>
+		Image URL:<br> <input type=text ng-model="cptUrl"><br>
+		book/movie source:<br> <input type=text ng-model="cptSource"><br>
+    <input type=submit value="Add Captain!">
+	</form>
+</div>
 
 </div>
 </body>
