@@ -1,4 +1,7 @@
-this.CaptainCtrl = function ($scope) {
+app = angular.module('CptnCounter',["ngResource"]);
+this.CaptainCtrl = function ($scope, $resource) {
+  //Captain = $resource('/captains/:id',{id: "this.id"});
+  //$scope.captains = Captain.query();
   $scope.captains = [
     {"name": "Jean-Luc Picard", "image": "img/picard.jpg", "source": "Star Trek: TNG", "votes": 0, index: 0}
     , {"name": "James Tiberius Kirk","image": "img/kirk.jpg", "source": "Star Trek: TOS", "votes": 0, index: 1}
@@ -15,6 +18,8 @@ this.CaptainCtrl = function ($scope) {
     $scope.captains[parseInt(idx)].votes += 1;
   }
   $scope.addCaptain = function() {
+    //cptn = Captain.save({"name": $scope.cptName,"image": $scope.cptUrl, "source": $scope.cptSource, "votes": 1, index: $scope.captains.length});
+    //$scope.captains.push(cptn);
     $scope.captains.push({"name": $scope.cptName,"image": $scope.cptUrl, "source": $scope.cptSource, "votes": 1, index: $scope.captains.length});
     $scope.cptName = "";
     $scope.cptUrl = "";
