@@ -13,10 +13,10 @@
   Search <input type=text ng-model="query">
   <ul id="captains-list">
     <li ng-repeat="captain in captains | filter:query | orderBy:'-votes'">
-      <h3>{{captain.name}}</h3>
-      <img src="{{captain.image}}" width="100">
+		<h3>{{captain.name}} {{captain.index}} => votes: {{captain.votes}}</h3>
+      <img ng-src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
-      <button ng-click="inc($index)" class="voteButton">{{captain.votes}}</button>
+			<button ng-click="inc(captain.index)" class="voteButton">{{captain.votes}}</button>
     </li>
   </ul>
 </div>
