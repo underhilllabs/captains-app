@@ -1,17 +1,32 @@
 app = angular.module('CptnCounter',["ngResource"]);
-this.CaptainCtrl = function ($scope, $resource) {
+this.CaptainCtrl = function ($scope, $http) {
+  $scope.getCaptains = function() {
+    $http({
+      method: 'GET',
+      url: 'http://n.bkmark.me/api/captains'
+    }).
+    success(function(data) {
+      $scope.captains = data;
+      $scope.error = '';
+    }).
+    error(function(data, status) {
+      $scope.error = 'Error: ' + status;
+      console.log($scope.error);
+    });
+  };
+  $scope.getCaptains();
   //Captain = $resource('/captains/:id',{id: "this.id"});
   //$scope.captains = Captain.query();
-  $scope.captains = [
-    {"name": "Jean-Luc Picard", "image": "img/picard.jpg", "source": "Star Trek: TNG", "votes": 0, index: 0}
-    , {"name": "James Tiberius Kirk","image": "img/kirk.jpg", "source": "Star Trek: TOS", "votes": 0, index: 1}
-    , {"name": "Kathryn Janeway", "image": "img/janeway.jpg", "source": "Star Trek Voyager ", "votes": 0, index: 2}
-    , {"name": "Hikaru Sulu", "image": "img/sulu.jpg", "source": "Star Trek Movies", "votes": 6, index: 3}
-    , {"name": "Mal Reynolds","image": "img/mal.jpg", "source": "Firefly", "votes": 4, index: 4}
-    , {"name": "Worf, Son of Mogh","image": "img/worf.jpg", "source": "Star Trek: DSN", "votes": 0, index: 5}
-    , {"name": "Benjamin Sisko","image": "img/sisko.jpg", "source": "Star Trek: DSN", "votes": 0, index: 6}
-    , {"name": "Han Solo","image": "img/solo.jpg", "source": "Star Wars", "votes": 0, index: 7}
-  ];
+  //$scope.captains = [
+  //  {"name": "Jean-Luc Picard", "image": "img/picard.jpg", "source": "Star Trek: TNG", "votes": 0, index: 0}
+  //  , {"name": "James Tiberius Kirk","image": "img/kirk.jpg", "source": "Star Trek: TOS", "votes": 0, index: 1}
+  //  , {"name": "Kathryn Janeway", "image": "img/janeway.jpg", "source": "Star Trek Voyager ", "votes": 0, index: 2}
+  //  , {"name": "Hikaru Sulu", "image": "img/sulu.jpg", "source": "Star Trek Movies", "votes": 6, index: 3}
+  //  , {"name": "Mal Reynolds","image": "img/mal.jpg", "source": "Firefly", "votes": 4, index: 4}
+  //  , {"name": "Worf, Son of Mogh","image": "img/worf.jpg", "source": "Star Trek: DSN", "votes": 0, index: 5}
+  //  , {"name": "Benjamin Sisko","image": "img/sisko.jpg", "source": "Star Trek: DSN", "votes": 0, index: 6}
+  //  , {"name": "Han Solo","image": "img/solo.jpg", "source": "Star Wars", "votes": 0, index: 7}
+  //];
 
   $scope.inc = function(idx) {
     console.log("index is " + idx + " int is " + parseInt(idx));
