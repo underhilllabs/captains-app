@@ -32,7 +32,12 @@ this.CaptainCtrl = function ($scope, $http, $location) {
 
   $scope.inc = function(idx) {
     console.log("index is " + idx + " int is " + parseInt(idx));
-    $scope.captains[parseInt(idx)].votes += 1;
+    index = parseInt(idx);
+    $scope.captains[index].votes += 1;
+    $http.put('http://m.bkmark.me\:8080/api/captain/' + idx, $scope.captains[index]).
+      success(function(data) {
+        $location.url('/');
+      });
   }
   $scope.addCaptain = function() {
     $scope.addCap.index = $scope.captains.length;
