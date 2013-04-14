@@ -2,16 +2,17 @@ app = angular.module('CptnCounter',["ngResource"]);
 this.CaptainCtrl = function ($scope, $http) {
   $scope.getCaptains = function() {
     $http({
-      method: 'GET',
-      url: 'http://n.bkmark.me/api/captains'
+      method: 'JSONP',
+      url: 'http://m.bkmark.me\:8080/api/captains?callback=JSON_CALLBACK'
     }).
     success(function(data) {
-      $scope.captains = data;
+      $scope.captains = data.captains;
       $scope.error = '';
     }).
     error(function(data, status) {
       $scope.error = 'Error: ' + status;
       console.log($scope.error);
+      console.log(data);
     });
   };
   $scope.getCaptains();
