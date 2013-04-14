@@ -1,5 +1,6 @@
 app = angular.module('CptnCounter',["ngResource"]);
-this.CaptainCtrl = function ($scope, $http) {
+this.CaptainCtrl = function ($scope, $http, $location) {
+  $scope.addCap = {};
   $scope.getCaptains = function() {
     $http({
       method: 'JSONP',
@@ -34,12 +35,23 @@ this.CaptainCtrl = function ($scope, $http) {
     $scope.captains[parseInt(idx)].votes += 1;
   }
   $scope.addCaptain = function() {
-    //cptn = Captain.save({"name": $scope.cptName,"image": $scope.cptUrl, "source": $scope.cptSource, "votes": 1, index: $scope.captains.length});
-    //$scope.captains.push(cptn);
-    $scope.captains.push({"name": $scope.cptName,"image": $scope.cptUrl, "source": $scope.cptSource, "votes": 1, index: $scope.captains.length});
-    $scope.cptName = "";
-    $scope.cptUrl = "";
-    $scope.cptSource = "";
+    $scope.addCap.index = $scope.captains.length;
+    $scope.addCap.votes = 1;
+    console.log($scope.addCap);
+
+    $scope.captains.push({"name": $scope.addCap.cptName,"image": $scope.addCap.cptUrl, "source": $scope.addCap.cptSource, "votes":  $scope.addCap.votes, index: $scope.addCap.index});
+    $http.post('http://m.bkmark.me\:8080/api/captain', $scope.addCap).
+      success(function(data) {
+        $location.path('/');
+      }).
+      error(function(data,status) {
+        console.log("ERROR: " + status)
+      });
+    $scope.addCap.cptName = "";
+    $scope.addCap.cptUrl = "";
+    $scope.addCap.cptSource = "";
+    $scope.addCap.index = "";
+    $scope.addCap.votes = "";
   }
 };
 
