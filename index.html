@@ -11,17 +11,15 @@
 <div id="captains" ng-controller="CaptainCtrl">
 <h1>Vote for your favorite Sci-Fi Captain</h1>
 <div class="span6">
-  Search <input type=text ng-model="query">
-  <ul id="captains-list">
-    <li ng-repeat="captain in captains | filter:query | orderBy:'-votes'">
-		<h3>{{captain.name}}</h3>
+    Search <input type=text ng-model="query">
+    <div class="cptn-div" ng-repeat="captain in captains | filter:query | orderBy:'-votes'">
+      <h3>{{captain.name}}</h3>
       <p>{{captain.source}}</p>
       <span>
       <img ng-src="{{captain.image}}" width="100" class="img-rounded">
 			<button ng-click="inc(captain.index)" class="btn btn-primary voteButton">{{captain.votes}}</button>
       </span>
-    </li>
-  </ul>
+    </div>
 </div>
 <div id="newCaptainForm" class="span4">
 	<h3 id="form-header">Add A New Contendeh!</h3>

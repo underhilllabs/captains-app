@@ -8,6 +8,11 @@ div#newCaptainForm {
   padding: 1em;
   margin-top: 2em;
 }
+div.cptn-div {
+  border: 1px solid #ccc;
+  padding: 1em;
+  background: #eee;
+}
 div#captains {
   margin-left: 2em;
 }
