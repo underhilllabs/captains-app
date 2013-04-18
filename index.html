@@ -10,16 +10,20 @@
 <body>
 <div id="captains" ng-controller="CaptainCtrl">
 <h1>Vote for your favorite Sci-Fi Captain</h1>
+<div class="span6">
   Search <input type=text ng-model="query">
   <ul id="captains-list">
     <li ng-repeat="captain in captains | filter:query | orderBy:'-votes'">
 		<h3>{{captain.name}}</h3>
-      <img ng-src="{{captain.image}}" width="100">
       <p>{{captain.source}}</p>
-			<button ng-click="inc(captain.index)" class="voteButton">{{captain.votes}}</button>
+      <span>
+      <img ng-src="{{captain.image}}" width="100" class="img-rounded">
+			<button ng-click="inc(captain.index)" class="btn btn-primary voteButton">{{captain.votes}}</button>
+      </span>
     </li>
   </ul>
-<div id="newCaptainForm">
+</div>
+<div id="newCaptainForm" class="span4">
 	<h3 id="form-header">Add A New Contendeh!</h3>
 	<form ng-submit="addCaptain()">
 		Name:<br> <input type=text ng-model="addCap.cptName"><br>
